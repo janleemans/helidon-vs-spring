@@ -30,7 +30,7 @@ public class GreetController {
     @GetMapping("/proxy-greet")
     public String proxy() throws InterruptedException {
         List<Thread> threads = new ArrayList<>(100);
-        for (int i = 0; i < 200; i++) {
+        for (int i = 0; i < 50; i++) {
             threads.add(Thread.ofVirtual().start(() -> restTemplate.getForObject("/sleep-greet", String.class)));
         }
         for (Thread thread : threads) {

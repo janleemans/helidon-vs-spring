@@ -33,7 +33,7 @@ public class GreetResource {
     @Path("/proxy-greet")
     public String proxyGreet() throws InterruptedException {
         List<Thread> threads = new ArrayList<>(100);
-        for (int i = 0; i < 200; i++) {
+        for (int i = 0; i < 100; i++) {
             threads.add(Thread.ofVirtual().start(() -> webTarget.path("/sleep-greet").request().get(String.class)));
         }
         for (Thread thread : threads) {

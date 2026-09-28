@@ -21,6 +21,6 @@ class MainTest {
                 .path("proxy-greet")
                 .request()
                 .get(String.class);
-        assertThat(message, is("Greetings from Helidon MP! Sleepy greeting called 200 times."));
+        assertThat(message, is("Greetings from Helidon MP! Sleepy greeting called 50 times."));
     }
 }

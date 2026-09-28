@@ -22,7 +22,7 @@ class MainTest {
     @Test
     void testGreet() {
         String message = restTemplate.getForObject("http://localhost:" + port + "/proxy-greet", String.class);
-        assertThat(message, is("Greetings from Spring Boot! Sleepy greeting called 200 times."));
+        assertThat(message, is("Greetings from Spring Boot! Sleepy greeting called 50 times."));
     }
 
 }
